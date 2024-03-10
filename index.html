@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender</title>
+</head>
+<style>
+    #main{
+        display: flex;
+        border: 3px solid black;
+        width: fit-content;
+        margin-left: 40%;
+        margin-top: 200px;
+    }
+    #div1{
+        height: 150px;
+        width: 100px;
+        background-color: beige;
+    }
+    #div2{
+        height: 150px;
+        width: 180px;
+        background-color: orangered;
+       
+    }
+    body{
+        background-color: pink;
+    }
+</style>
+<body >
+    
+    
+        <div id="main">
+            <div id="div1">
+                <h1 id="date" style="font-size: 70px; margin: 0px; margin-top: 10px;text-align: center;">13</h1>
+                <h1 id="day" style="font-size: 20px;text-align: center;margin: 0px;">Tuesday</h1>
+            </div>
+            <div id="div2">
+                <h1 id="month" style="color: white; font-weight: lighter; text-align: center; margin: 0px; margin-top: 40px;">June</h1>
+                <h1 id="year" style="color: white; font-weight: lighter; text-align: center;margin: 0px;">2020</h1>
+            </div>
+        </div>
+    <script>
+        document.getElementById("main").addEventListener("load",mydate)
+        function mydate(){
+        let date=new Date();
+        let date1=date.getDate();
+        let day=date.getDay();
+        let days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        let month=date.getMonth();
+        let months=["Jan","Feb","March","April","May","June","July","August","Sep","Oct","Nov","Dec"];
+        let year=date.getFullYear();
+        document.getElementById("date").innerHTML=date1;
+        document.getElementById("day").innerHTML=days[day];
+        document.getElementById("month").innerHTML=months[month];
+        document.getElementById("year").innerHTML=year;
+        }
+        setInterval(mydate,10)
+
+
+    </script>
+</body>
+</html>
